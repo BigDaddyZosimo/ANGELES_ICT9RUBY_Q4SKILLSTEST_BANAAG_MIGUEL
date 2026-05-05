@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notebooks</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; display: flex; min-height: 100vh; background: #e8e8e8; }
+    .sidebar { width: 120px; min-height: 100vh; background: #1a1a2e; display: flex; flex-direction: column; align-items: center; padding: 1.5rem 0; flex-shrink: 0; }
+    .sidebar .brand { width: 44px; height: 44px; background: #2c2c4e; border-radius: 8px; margin-bottom: 2rem; }
+    .sidebar a { color: #888; text-decoration: none; font-size: 12px; padding: 9px 0; width: 100%; text-align: center; display: block; transition: color 0.15s, background 0.15s; }
+    .sidebar a:hover { color: #fff; background: #ffffff10; }
+    .sidebar a.active { color: #fff; }
+    .sidebar a.logout { margin-top: auto; color: #666; }
+    .sidebar a.logout:hover { color: #e74c3c; }
+    .main { flex: 1; position: relative; }
+    .card { background: #fff; border-radius: 10px; margin: 1.5rem; padding: 1.5rem 2rem; min-height: calc(100vh - 3rem); box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+    .tag { display: inline-block; background: #1a1a2e; color: #fff; font-size: 13px; font-weight: 700; padding: 6px 18px; border-radius: 6px; margin-bottom: 4px; }
+    .sub { font-size: 12px; color: #aaa; margin-bottom: 1.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .sc { background: #f7f7f7; border-radius: 8px; padding: 1rem; transition: transform 0.15s; cursor: default; }
+    .sc:hover { transform: translateY(-2px); }
+    .sc .thumb { width: 100%; height: 65px; background: #ddd; border-radius: 6px; margin-bottom: 0.75rem; }
+    .sc h5 { font-size: 14px; font-weight: 700; color: #111; margin-bottom: 2px; }
+    .sc .qtr { font-size: 11px; color: #bbb; margin-bottom: 4px; }
+    .sc .teacher { font-size: 12px; color: #666; margin-bottom: 8px; }
+    .sc .bar { height: 4px; background: #e0e0e0; border-radius: 4px; }
+    .sc .fill { height: 100%; border-radius: 4px; background: #1a1a2e; }
+    .foot { position: absolute; bottom: 1.5rem; right: 2rem; font-size: 10px; color: #bbb; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="brand"></div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notebooks.html" class="active">Virtual Notebooks</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="profile.html">Profile</a>
+    <a href="index.html" class="logout">Logout</a>
+  </div>
+  <div class="main">
+    <div class="card">
+      <div class="tag">NOTEBOOKS</div>
+      <p class="sub">Select a subject.</p>
+      <div class="grid">
+        <div class="sc"><div class="thumb"></div><h5>Filipino</h5><p class="qtr">S-Amet/Ayet 2025-2026</p><p class="teacher">Mr. Francisco</p><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+        <div class="sc"><div class="thumb"></div><h5>English</h5><p class="qtr">S-Amet/Ayet 2025-2026</p><p class="teacher">Ms. Avila</p><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+        <div class="sc"><div class="thumb"></div><h5>Math</h5><p class="qtr">S-Amet/Ayet 2025-2026</p><p class="teacher">Mr. Santos</p><div class="bar"><div class="fill" style="width:60%"></div></div></div>
+        <div class="sc"><div class="thumb"></div><h5>Science</h5><p class="qtr">S-Amet/Ayet 2025-2026</p><p class="teacher">Mr. Mendoza</p><div class="bar"><div class="fill" style="width:75%"></div></div></div>
+        <div class="sc"><div class="thumb"></div><h5>Social Studies</h5><p class="qtr">S-Amet/Ayet 2025-2026</p><p class="teacher">Mr. Reynoso</p><div class="bar"><div class="fill" style="width:55%"></div></div></div>
+        <div class="sc"><div class="thumb"></div><h5>Values Education</h5><p class="qtr">S-Amet/Ayet 2025-2026</p><p class="teacher">Mr. Burille</p><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+      </div>
+      <p id="count" style="margin-top:1rem;font-size:12px;color:#bbb;"></p>
+    </div>
+    <div class="foot">Student Name | Grade &amp; Section</div>
+  </div>
+  <script>
+    var total = document.querySelectorAll(".sc").length;
+    document.getElementById("count").innerHTML = "Total subjects: " + total;
+  </script>
+</body>
+</html>
